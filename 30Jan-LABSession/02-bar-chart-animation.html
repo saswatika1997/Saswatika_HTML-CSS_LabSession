@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Provide styles -->
+        <style>
+            .bar-chart {
+                display: block;
+                width: 194px;
+                padding: 1em;
+                margin: 0 auto;
+                background-color: lightgray;
+            }
+
+            .bar-outer {
+                display: inline-block;
+                text-align: center;
+            }
+
+            .bar {
+                display: inline-block;
+                width: 30px;
+                height: 300px;
+                margin: 1em;
+                background-color: darkgray;
+            }
+
+            .bar-inner {
+                background-color: white;
+                height: 100%;
+            }
+
+            /* Create @keyframes animation which provides 100% width on a .bar-inner initially, and 70% height at the end of the animation - apply this to #bar1 */
+            @keyframes resize1 {
+                0% { height: 100%; }
+                100% { height: 70%; }
+            }
+
+            #bar1 .bar-inner {
+                animation-name: resize1;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+            
+            /* Create @keyframes animation which provides 100% width on a .bar-inner initially, and 60% height at the end of the animation - apply this to #bar2 */
+            @keyframes resize2 {
+                0% { height: 100%; }
+                100% { height: 60%; }
+            }
+
+            #bar2 .bar-inner {
+                animation-name: resize2;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+            
+            /* Create @keyframes animation which provides 100% width on a .bar-inner initially, and 20% height at the end of the animation - apply this to #bar3 */
+            @keyframes resize3 {
+                0% { height: 100%; }
+                100% { height: 20%; }
+            }
+
+            #bar3 .bar-inner {
+                animation-name: resize3;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Create a container with gray background -->
+        <!-- This shall have 3 divs for each bar with background darkgray (get them next to each other) -->
+        <div class="bar-chart">
+            <!-- Add children that are 100% height and have white background -->
+            <div class="bar-outer">
+                <div class="bar" id="bar1">
+                    <div class="bar-inner"></div>
+                </div>
+                <br />
+                30%
+            </div>
+            <div class="bar-outer">
+                <div class="bar" id="bar2">
+                    <div class="bar-inner"></div>
+                </div>
+                <br />
+                40%
+            </div>
+            <div class="bar-outer">
+                <div class="bar" id="bar3">
+                    <div class="bar-inner"></div>
+                </div>
+                <br />
+                80%
+            </div>
+        </div>
+    </body>
+</html>
