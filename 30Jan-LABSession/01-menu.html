@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- 3. Style it -->
+        <!-- On the ul set list-style-type: none (to remove bullets) -->
+        <!-- Remove padding, margin of ul -->
+        <!-- You can get list items side-by-side by making them inline-block -->
+        <style>
+            .list-unstyled {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .main-menu {
+                background-color: lightgray;
+            }
+
+            .main-menu > li {
+                display: inline-block;
+            }
+
+            .main-menu > li > a {
+                display: inline-block;
+                padding: 0.5em;
+                text-decoration: none;
+                color: white;
+            }
+
+            .main-menu > li > a:hover {
+                background-color: black;
+            }
+
+            .item-with-sub-menu {
+                position: relative;
+            }
+
+            /* we need to hide this initially */
+            .sub-menu {
+                display: none;
+                position: absolute;
+                top: 35px; /* from the top of the .item-with-sub-menu element */
+                left: 0px;
+                white-space: nowrap;
+                padding: 1em;
+                background-color: lightgray;
+            }
+
+            /* modify the selector so that it selects the sub-menu only when it is within the ..item-with-sub-menu item that is being hovered upon */
+            .item-with-sub-menu:hover .sub-menu {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 1. Create a nav -->
+        <!-- 2. Place top-level links in a ul with lis (Link 1, Link 2, Link 3) -->
+        <nav>
+            <ul class="main-menu list-unstyled">
+                <li>
+                    <a href="/link1">Link 1</a>
+                </li>
+
+                <!-- position: relative -->
+                <li class="item-with-sub-menu">
+                    <a href="/link2">Link 2</a>
+
+                    <!-- 4. Add another ul within with sub menu (class="sub-menu") items as list items. Make this ul - position: absolute , top: ?  -->
+                    <ul class="sub-menu list-unstyled">
+                        <li>
+                            <a href="/link2/item1">Item 1</a>
+                        </li>
+                        <li>
+                            <a href="/link2/item1">Item 2</a>
+                        </li>
+                        <li>
+                            <a href="/link2/item1">Item 3</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="/link3">Link 3</a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
